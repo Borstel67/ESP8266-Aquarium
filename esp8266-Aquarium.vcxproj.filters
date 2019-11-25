@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="esp8266-Aquarium.ino" />
+    <None Include="Debug.ino" />
+    <None Include="GlobalFuntion.ino" />
+    <None Include="HomeMatic.ino" />
+    <None Include="LEDStrip.ino" />
+    <None Include="LEDTime.ino" />
+    <None Include="OTA.ino" />
+    <None Include="TempDS18B20.ino" />
+    <None Include="UDP.ino" />
+    <None Include="Web.ino" />
+    <None Include="WEBconfAllgemein.ino" />
+    <None Include="WEBElements.ino" />
+    <None Include="WebLED.ino" />
+    <None Include="WifiManager.ino" />
+    <None Include="README.md" />
+    <None Include="D1mini_Strip_Temp_Steckplatine.pdf" />
+    <None Include="D1mini_Strip_Temp_Schaltplan.pdf" />
+    <None Include="D1mini_Strip_Temp.fzz" />
+    <None Include="CppProperties.json" />
+    <None Include="FileHandling.ino" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="__vm\.esp8266-Aquarium.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="css_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="css_wm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="js_fwupd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="js_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="js_webled.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="js_wm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="redme.txt" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,24 @@
+Beschreibung Projekt
+
+Funktion:
+- drei funktions modi
+	1. Config mode
+	2. AP Mode
+	3. STA Mode
+- Zeitzohne
+- Sommer Winterzeit Umschaltung
+- Sonnenaufganf Sonnenuntergang
+- Mondphasen
+- Synconiesieren mit NTP Server
+- Manuelle Zeiteinstellung
+- 
+Konfigiration
+
+
+Offen 
+UDP Kopplung 
+HomeMatic Kolpplung
+
+
+
+

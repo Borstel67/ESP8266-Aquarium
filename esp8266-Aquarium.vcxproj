@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C5F80730-F44F-4478-BDAE-6634EFC2CA88}</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
+    <ProjectName>esp8266-Aquarium</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>
+    </PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>
+    </PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>
+    </PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>
+    </PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\esp8266-Aquarium;C:\arduino_libraries_ext\libraries\ArduinoJson\src;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ESP8266WiFi\src;C:\arduino_libraries_ext\libraries\esp8266FTPServer;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ESP8266HTTPClient\src;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ESP8266WebServer\src;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ESP8266HTTPUpdateServer\src;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ESP8266mDNS;C:\arduino_libraries_ext\libraries\sunMoon;C:\arduino_libraries_ext\libraries\Time;C:\arduino_libraries_ext\libraries\Timezone\src;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ArduinoOTA;C:\arduino_libraries_ext\libraries\FastLED;C:\arduino_libraries_ext\libraries\OneWire;C:\arduino_libraries_ext\libraries\DallasTemperature;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\DNSServer\src;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\libb64;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\spiffs;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\umm_malloc;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\variants\d1_mini;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\tools\sdk\include;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\tools\sdk\lwip2\include;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\tools\sdk\libc\xtensa-lx106-elf\include;C:\arduino-PR-beta1.9\portable\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\xtensa-lx106-elf\include\c++\4.8.2;C:\arduino-PR-beta1.9\portable\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\xtensa-lx106-elf\include\c++\4.8.2\xtensa-lx106-elf;C:\arduino-PR-beta1.9\portable\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\xtensa-lx106-elf\include;C:\arduino-PR-beta1.9\portable\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\lib\gcc\xtensa-lx106-elf\4.8.2\include;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\tools\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ProjectDir)__vm\.esp8266-Aquarium.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <PreprocessorDefinitions>__ESP8266_esp8266__;__ESP8266_ESP8266__;__ets__;ICACHE_FLASH;F_CPU=80000000L;LWIP_OPEN_SRC;TCP_MSS=536;DEBUG_ESP_PORT=Serial;ARDUINO=10900;ARDUINO_ESP8266_WEMOS_D1MINI;ARDUINO_ARCH_ESP8266;ESP8266;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\esp8266-Aquarium;C:\arduino_libraries_ext\libraries\ArduinoJson\src;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ESP8266WiFi\src;C:\arduino_libraries_ext\libraries\esp8266FTPServer;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ESP8266HTTPClient\src;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ESP8266WebServer\src;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ESP8266HTTPUpdateServer\src;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ESP8266mDNS;C:\arduino_libraries_ext\libraries\sunMoon;C:\arduino_libraries_ext\libraries\Time;C:\arduino_libraries_ext\libraries\Timezone\src;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\libraries\ArduinoOTA;C:\arduino_libraries_ext\libraries\FastLED;C:\arduino_libraries_ext\libraries\OneWire;C:\arduino_libraries_ext\libraries\DallasTemperature;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\libb64;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\spiffs;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\cores\esp8266\umm_malloc;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\variants\d1_mini;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\tools\sdk\include;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\tools\sdk\lwip2\include;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\tools\sdk\libc\xtensa-lx106-elf\include;C:\Users\borstel\AppData\Local\Temp\VMBuilds\esp8266-Aquarium\esp8266_d1_mini\Release\core;C:\arduino-PR-beta1.9\portable\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\xtensa-lx106-elf\include\c++\4.8.2;C:\arduino-PR-beta1.9\portable\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\xtensa-lx106-elf\include\c++\4.8.2\xtensa-lx106-elf;C:\arduino-PR-beta1.9\portable\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\xtensa-lx106-elf\include;C:\arduino-PR-beta1.9\portable\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2\lib\gcc\xtensa-lx106-elf\4.8.2\include;C:\arduino-PR-beta1.9\portable\packages\esp8266\hardware\esp8266\2.4.1\tools\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ProjectDir)__vm\.esp8266-Aquarium.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <PreprocessorDefinitions>__ESP8266_esp8266__;__ESP8266_ESP8266__;__ets__;ICACHE_FLASH;F_CPU=80000000L;LWIP_OPEN_SRC;TCP_MSS=536;DEBUG_ESP_PORT=Serial;ARDUINO=10900;ARDUINO_ESP8266_WEMOS_D1MINI;ARDUINO_ARCH_ESP8266;ESP8266;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="VisualMicro" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CppProperties.json" />
+    <None Include="D1mini_Strip_Temp.fzz" />
+    <None Include="D1mini_Strip_Temp_Schaltplan.pdf" />
+    <None Include="D1mini_Strip_Temp_Steckplatine.pdf" />
+    <None Include="Debug.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="esp8266-Aquarium.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="FileHandling.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="GlobalFuntion.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="HomeMatic.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="LEDStrip.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="LEDTime.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="OTA.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="README.md" />
+    <None Include="TempDS18B20.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="UDP.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="Web.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="WEBconfAllgemein.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="WEBElements.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="WebLED.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="WifiManager.ino">
+      <FileType>CppCode</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="css_global.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="css_wm.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="js_fwupd.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="js_global.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="js_webled.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="js_wm.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="WM.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="__vm\.esp8266-Aquarium.vsarduino.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WM.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="redme.txt" />
+  </ItemGroup>
+  <PropertyGroup>
+    <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties config.Release.arduino.upload.port="192.168.178.241" config.Release.customdebug_esp8266_d1_mini_vm_disable_optimization="vm_disable_opt_default" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
