@@ -772,12 +772,18 @@ void confLEDHtml() {
 	page += FPSTR(HTTP_LABEL_STATUS);
 	if (sc) {
 		saveSuccess = saveSystemConfig();
-		Serial.print("sc=1");
-		LEDSwitchSave();
-		LEDMoonSave();
-		SunMmoon_Set();
+		Serial.println("sc=1");
+		setup();
 		FastLED_Set();
-		LEDsetColorsAll();
+		LEDSwitchSave();
+		LEDSwitchK1();
+		LEDSwitchK2();
+		LEDSwitchK3();
+		LEDSwitchK4();
+		SunMmoon_Set();
+		LEDMoonSave();
+		//LEDsetColorsAll();
+		
 	}
 	if (sc && !showHMDevError) {
 		if (saveSuccess) {

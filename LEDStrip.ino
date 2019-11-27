@@ -9,8 +9,10 @@ void FastLED_Set() {
 	
 	const int anzled = atoi(GlobalConfig.ledanzges);// anzahl der led der kette
 	FastLED.addLeds<WS2812, LED_STRIP_PIN, GRB>(leds, anzled).setCorrection(TypicalLEDStrip);
-	LEDSwitch();
-
+//	LEDSwitchK1();
+//	LEDSwitchK2();
+//	LEDSwitchK3();
+//	LEDSwitchK4();
 }
 
 // setze alle led
@@ -26,7 +28,8 @@ void LEDsetColorsAll() {
 }
 void LEDsetColosEinK1() {
   // Color 1
-  _color = GlobalConfig.ledcolor1; 
+  _color = GlobalConfig.ledcolor1;
+  Serial.println(GlobalConfig.ledcolor1);
   _icolor = 1;
   _anzled = atoi(GlobalConfig.ledanzges);
   _anzcolor = atoi(GlobalConfig.ledanzcol);
@@ -35,6 +38,7 @@ void LEDsetColosEinK1() {
 void LEDsetColosEinK2() {
   // Color 2
 	_color = GlobalConfig.ledcolor2;
+	Serial.println(GlobalConfig.ledcolor2);
 	_icolor = 2;
 	_anzled = atoi(GlobalConfig.ledanzges);
 	_anzcolor = atoi(GlobalConfig.ledanzcol);
@@ -43,6 +47,7 @@ void LEDsetColosEinK2() {
 void LEDsetColosEinK3() {
   // Color 3
 	_color = GlobalConfig.ledcolor3;
+	Serial.println(GlobalConfig.ledcolor3);
 	_icolor = 3;
 	_anzled = atoi(GlobalConfig.ledanzges);
 	_anzcolor = atoi(GlobalConfig.ledanzcol);
@@ -51,6 +56,7 @@ void LEDsetColosEinK3() {
 void LEDsetColosEinK4() {
   // Color 4
 	_color = GlobalConfig.ledcolor4;
+	Serial.println(GlobalConfig.ledcolor4);
 	_icolor = 4;
 	_anzled = atoi(GlobalConfig.ledanzges);
 	_anzcolor = atoi(GlobalConfig.ledanzcol);
@@ -58,8 +64,9 @@ void LEDsetColosEinK4() {
 }
 void LEDsetColosAusK1() {
   // Color 1
-	_color = GlobalConfig.ledcolor4;
-	_icolor = 4;
+	_color = GlobalConfig.ledcolor5;
+	Serial.println(GlobalConfig.ledcolor5);
+	_icolor = 1;
 	_anzled = atoi(GlobalConfig.ledanzges);
 	_anzcolor = atoi(GlobalConfig.ledanzcol);
 	setAll(_anzled, _anzcolor, _icolor, _color);
@@ -67,6 +74,7 @@ void LEDsetColosAusK1() {
 void LEDsetColosAusK2() {
   // Color 2
 	_color = GlobalConfig.ledcolor6;
+	Serial.println(GlobalConfig.ledcolor6);
 	_icolor = 2;
 	_anzled = atoi(GlobalConfig.ledanzges);
 	_anzcolor = atoi(GlobalConfig.ledanzcol);
@@ -75,6 +83,7 @@ void LEDsetColosAusK2() {
 void LEDsetColosAusK3() {
   // Color 3
 	_color = GlobalConfig.ledcolor7;
+	Serial.println(GlobalConfig.ledcolor7);
 	_icolor = 3;
 	_anzled = atoi(GlobalConfig.ledanzges);
 	_anzcolor = atoi(GlobalConfig.ledanzcol);
@@ -97,9 +106,9 @@ byte setAll(int al, int ac, int ic, String c) {
   int red = number >> 16;
   int green = number >> 8 & 0xFF;
   int blue = number & 0xFF;
-  delay(10);
+  delay(20);
   //    Serial.print("nach yield() Farbe");
-  delay(10);
+  //delay(10);
   // set LED
   int ipix_end = al;
   //- (ac - ic);

@@ -437,7 +437,10 @@ void loop() {
 	if (millis() - previousMillis_1 > interval) {
 		previousMillis_1 = millis();   // aktuelle Zeit abspeichern
 		// funktion ausführen
-		LEDSwitch();
+		LEDSwitchK1();
+		LEDSwitchK2();
+		LEDSwitchK3();
+		LEDSwitchK4();
 		Serial.println("LED Swich end");
 		LEDMoon();
 		Serial.println("LED Moon end");

@@ -7,21 +7,27 @@ bool SZ41 = false, SZ42 = false, KE4 = false, KA4 = false, HKE4 = false, HKA4 = 
 
 //String colmoon;
 bool SZM = false, HKEM = false, HKAM = false;
+//
+char _buffe[VARSIZE6];
+char _buffa[VARSIZE6];
 
 // rücksetzen nach speicherung zeiten
 void LEDSwitchSave() {
+	Serial.println("rücksetzen SZ");
 	bool SZ11 = false, SZ12 = false, KE1 = false, KA1 = false, HKE1 = false, HKA1 = false;
 	bool SZ21 = false, SZ22 = false, KE2 = false, KA2 = false, HKE2 = false, HKA2 = false;
 	bool SZ31 = false, SZ32 = false, KE3 = false, KA3 = false, HKE3 = false, HKA3 = false;
 	bool SZ41 = false, SZ42 = false, KE4 = false, KA4 = false, HKE4 = false, HKA4 = false;
-	LEDSwitch();
+	//LEDSwitchK1();
+	//LEDSwitchK1();
+	//LEDSwitchK2();
+	//LEDSwitchK3();
 }
 
 // led schalten
-void LEDSwitch() {
-	char _buffe[VARSIZE6];
-	char _buffa[VARSIZE6];
+void LEDSwitchK1() {
 	//Kanal 1
+	Serial.println(atoi(GlobalConfig.hk1));
 	switch (atoi(GlobalConfig.hk1)) {
 	case 0: // Hand Aus //do something when var equals 1
 		if (!HKA1) {
@@ -46,12 +52,14 @@ void LEDSwitch() {
 		SZ12 = Schalten(_buffe, _buffa);
 
 		if ((SZ11 || SZ12) && !KE1) {
+			Serial.println("K1 ein");
 			DEBUG("K1 Ein");
 			LEDsetColosEinK1();
 			KE1 = true;
 			KA1 = false;
 		}
 		if (!SZ11 && !SZ12 && !KA1) {
+			Serial.println("K1 aus");
 			DEBUG("K1 Aus");
 			LEDsetColosAusK1();
 			KE1 = false;
@@ -80,9 +88,12 @@ void LEDSwitch() {
 		}
 		break;
 	}
-
+	delay(50);
+}
+void LEDSwitchK2() {
 	//Kanal 2
 	switch (atoi(GlobalConfig.hk2)) {
+		Serial.println(atoi(GlobalConfig.hk2));
 	case 0: // Hand Aus //do something when var equals 1
 		if (!HKA2) {
 			LEDsetColosAusK2();
@@ -136,8 +147,12 @@ void LEDSwitch() {
 		}
 		break;
 	}
+	delay(50);
+}
+void LEDSwitchK3() {
 	//Kanal3
 	switch (atoi(GlobalConfig.hk3)) {
+		Serial.println(atoi(GlobalConfig.hk3));
 	case 0: // Hand Aus //do something when var equals 1
 		if (!HKA3) {
 			LEDsetColosAusK3();
@@ -191,8 +206,12 @@ void LEDSwitch() {
 		}
 		break;
 	}
-	//Kanal4
+	delay(50);
+}
+void LEDSwitchK4() {
+//Kanal4
 	switch (atoi(GlobalConfig.hk4)) {
+	Serial.println(atoi(GlobalConfig.hk4));
 	case 0: // Hand Aus //do something when var equals 1
 		if (!HKA4) {
 			LEDsetColosAusK4();
@@ -250,7 +269,7 @@ void LEDSwitch() {
 // rücksetzen nach Speicherung moon
 void LEDMoonSave() {
 	bool SZM = false, HKEM = false, HKAM = false;
-	LEDMoon();
+	//LEDMoon();
 }
 // setzen der moon led
 void LEDMoon() {
@@ -266,7 +285,7 @@ void LEDMoon() {
 		if (!HKEM) {
 			HKEM = true;
 			HKAM = false;
-			LEDSwitchSave();
+			//LEDSwitchSave();
 		}
 		break;
 	case 1: // Hand Ein //do something when var equals 2
