@@ -772,8 +772,6 @@ void confLEDHtml() {
 	page += FPSTR(HTTP_LABEL_STATUS);
 	if (sc) {
 		saveSuccess = saveSystemConfig();
-		Serial.println("sc=1");
-		setup();
 		FastLED_Set();
 		LEDSwitchSave();
 		LEDSwitchK1();
@@ -782,6 +780,7 @@ void confLEDHtml() {
 		LEDSwitchK4();
 		SunMmoon_Set();
 		LEDMoonSave();
+		LEDMoon();
 		//LEDsetColorsAll();
 		
 	}

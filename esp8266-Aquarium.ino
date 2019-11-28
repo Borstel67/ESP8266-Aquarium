@@ -55,13 +55,8 @@
 #define UDPPORT					6676	// UDP Port
 #define KEYPRESSLONGMILLIS		1500	//Millisekunden für langen Tastendruck bei Sonoff Touch als Sender
 #define MAX_TELNET_CLIENTS		2		// Telnet Server
-//#define LED_STRIP_PIN			3		// pin WS2812 NodeMCU 1.0 (ESP-12)
-#define LED_STRIP_PIN			0		// pin WS2812
-#define ONE_WIRE_BUS_PIN		14		// pin Temperatur DS18B20
-#define DS18B20_Aufloesung		8		// auflösung Temperatur DS18B20
-#define Anzahl_Sensoren_DS18B20	1		// Anzahl der angeschlossenen Sensoren - Mögliche Werte: '0','1','2'
 
-const String FIRMWARE_VERSION = "1.3.4";
+const String FIRMWARE_VERSION = "1.3.5";
 
 
 //FW über GITHUB
@@ -198,7 +193,13 @@ bool PRESS_LONGsent = false;
 #define wifiManagerDebugOutput   true
 
 //FastLED
-CRGB leds[300];//Anzahl von LED des Strip
+#define LED_STRIP_PIN			0		// pin WS2812
+//#define LED_STRIP_PIN			3		// pin WS2812 NodeMCU 1.0 (ESP-12)
+#define NUM_LEDS                300
+#define LED_TYPE                WS2812
+#define COLOR_ORDER             GRB
+#define FRAMES_PER_SECOND       60
+CRGB leds[NUM_LEDS];                    //Anzahl von LED des Strip
 //#define NUM_LEDS 221//192+139+86
 
 
@@ -248,6 +249,9 @@ struct udp_t {
 
 // Temperatur DS18B20
 // Data wire is plugged into pin D5 on the ESP8266 12-E - GPIO 14 (D5)
+#define ONE_WIRE_BUS_PIN		14		// pin Temperatur DS18B20
+#define DS18B20_Aufloesung		8		// auflösung Temperatur DS18B20
+#define Anzahl_Sensoren_DS18B20	1		// Anzahl der angeschlossenen Sensoren - Mögliche Werte: '0','1','2'
 DeviceAddress DS18B20_Adressen;
 // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
 OneWire oneWire(ONE_WIRE_BUS_PIN);// on pin (a 4.7K resistor is necessary)

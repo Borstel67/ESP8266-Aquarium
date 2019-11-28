@@ -14,10 +14,10 @@ char _buffa[VARSIZE6];
 // rücksetzen nach speicherung zeiten
 void LEDSwitchSave() {
 	Serial.println("rücksetzen SZ");
-	bool SZ11 = false, SZ12 = false, KE1 = false, KA1 = false, HKE1 = false, HKA1 = false;
-	bool SZ21 = false, SZ22 = false, KE2 = false, KA2 = false, HKE2 = false, HKA2 = false;
-	bool SZ31 = false, SZ32 = false, KE3 = false, KA3 = false, HKE3 = false, HKA3 = false;
-	bool SZ41 = false, SZ42 = false, KE4 = false, KA4 = false, HKE4 = false, HKA4 = false;
+	SZ11 = false, SZ12 = false, KE1 = false, KA1 = false, HKE1 = false, HKA1 = false;
+	SZ21 = false, SZ22 = false, KE2 = false, KA2 = false, HKE2 = false, HKA2 = false;
+	SZ31 = false, SZ32 = false, KE3 = false, KA3 = false, HKE3 = false, HKA3 = false;
+	SZ41 = false, SZ42 = false, KE4 = false, KA4 = false, HKE4 = false, HKA4 = false;
 	//LEDSwitchK1();
 	//LEDSwitchK1();
 	//LEDSwitchK2();
@@ -27,7 +27,6 @@ void LEDSwitchSave() {
 // led schalten
 void LEDSwitchK1() {
 	//Kanal 1
-	Serial.println(atoi(GlobalConfig.hk1));
 	switch (atoi(GlobalConfig.hk1)) {
 	case 0: // Hand Aus //do something when var equals 1
 		if (!HKA1) {
@@ -52,14 +51,12 @@ void LEDSwitchK1() {
 		SZ12 = Schalten(_buffe, _buffa);
 
 		if ((SZ11 || SZ12) && !KE1) {
-			Serial.println("K1 ein");
 			DEBUG("K1 Ein");
 			LEDsetColosEinK1();
 			KE1 = true;
 			KA1 = false;
 		}
 		if (!SZ11 && !SZ12 && !KA1) {
-			Serial.println("K1 aus");
 			DEBUG("K1 Aus");
 			LEDsetColosAusK1();
 			KE1 = false;
@@ -93,10 +90,10 @@ void LEDSwitchK1() {
 void LEDSwitchK2() {
 	//Kanal 2
 	switch (atoi(GlobalConfig.hk2)) {
-		Serial.println(atoi(GlobalConfig.hk2));
 	case 0: // Hand Aus //do something when var equals 1
 		if (!HKA2) {
 			LEDsetColosAusK2();
+			Serial.println("Hand aus");
 			HKE2 = false;
 			HKA2 = true;
 		}
@@ -104,6 +101,7 @@ void LEDSwitchK2() {
 	case 1: // Hand Ein //do something when var equals 2
 		if (!HKE2) {
 			LEDsetColosEinK2();
+			Serial.println("Hand ein");
 			HKE2 = true;
 			HKA2 = false;
 		}
@@ -147,7 +145,6 @@ void LEDSwitchK2() {
 		}
 		break;
 	}
-	delay(50);
 }
 void LEDSwitchK3() {
 	//Kanal3
@@ -268,17 +265,16 @@ void LEDSwitchK4() {
 }
 // rücksetzen nach Speicherung moon
 void LEDMoonSave() {
-	bool SZM = false, HKEM = false, HKAM = false;
+	SZM = false, HKEM = false, HKAM = false;
 	//LEDMoon();
 }
 // setzen der moon led
 void LEDMoon() {
 	//Moon
-	char _ledanzmond[255];
+	//char _ledanzmond[255];
 	int _fmDay = 2; // facktor mDay
 	int _kmDay = 0;
-	String _colmoon = GlobalConfig.ledcolormoon;
-	strcpy(_ledanzmond, GlobalConfig.ledanzmond);
+	//strcpy(_ledanzmond, GlobalConfig.ledanzmond);
 
 	switch (atoi(GlobalConfig.hkm)) {
 	case 0: // Hand Aus //do something when var equals 1
@@ -294,11 +290,11 @@ void LEDMoon() {
 			HKAM = true;
 			if (mDay > 15) {
 				_kmDay = _fmDay * abs(mDay - 31);
-				splitMoon(_kmDay, _ledanzmond, _colmoon);
+				LEDsetMoon(_kmDay);
 			}
 			else {
 				_kmDay = _fmDay * abs(mDay);
-				splitMoon(_kmDay, _ledanzmond, _colmoon);
+				LEDsetMoon(_kmDay);
 			}
 		}
 		break;
@@ -309,11 +305,11 @@ void LEDMoon() {
 			//        SZAM = false;
 			if (mDay > 15) {
 				_kmDay = _fmDay * abs(mDay - 31);
-				splitMoon(_kmDay, _ledanzmond, _colmoon);
+				LEDsetMoon(_kmDay);
 			}
 			else {
 				_kmDay = _fmDay * abs(mDay);
-				splitMoon(_kmDay, _ledanzmond, _colmoon);
+				LEDsetMoon(_kmDay);
 			}
 		}
 		if ((SZ11 || SZ12 || SZ21 || SZ22 || SZ31 || SZ32 || SZ41 || SZ42) && SZM) {
@@ -329,11 +325,11 @@ void LEDMoon() {
 			//        SZAM = false;
 			if (mDay > 15) {
 				_kmDay = _fmDay * abs(mDay - 31);
-				splitMoon(_kmDay, _ledanzmond, _colmoon);
+				LEDsetMoon(_kmDay);
 			}
 			else {
 				_kmDay = _fmDay * abs(mDay);
-				splitMoon(_kmDay, _ledanzmond, _colmoon);
+				LEDsetMoon(_kmDay);
 			}
 		}
 		if ((SZ11 || SZ12 || SZ21 || SZ22 || SZ31 || SZ32 || SZ41 || SZ42) && SZM) {
@@ -348,57 +344,7 @@ void LEDMoon() {
 /*funktion spliten des eingabe stringes der für moon benötigten LED
 _mDay = tag der Moonphase _anzled = zeichenkette der LED _colmoon = farbe der led
 */
-byte splitMoon(int _mDay, char* _anzled, String _colmoon) {
-	char ledsmond1[4][8]; // array ertse teilung = { {"4"},{"10-20"},{"10"},{"999-999"} };
-	char ledsmond2[4][8]; // arrey für zweite teilung = "10-20" [0]=anzahl [1]= anfang [2]= ende
-	char* ychr;
-	Serial.print(_anzled);
-	int i = 1;
-	Serial.println(GlobalConfig.ledanzmond);
-	splitString(_anzled, ";", ledsmond1);  // Splite String aus Globelconfig
-	Serial.println(ledsmond1[0]);
-	int y = atoi(ledsmond1[0]);
-	Serial.println(y);
-	for (i = 1; i < y + 1; i++) {
-		if (strchr(ledsmond1[i], '-')) { // sucht nach (-)
-			Serial.println(ledsmond1[i]);
-			splitString(ledsmond1[i], "-", ledsmond2);  // [0]=Zähler [1]=Anfang [2]=Ende
-			setMoon(_mDay, atoi(ledsmond2[1]), atoi(ledsmond2[2]), _colmoon);// setzen der LED
-			Serial.println(ledsmond2[1]);
-			Serial.println(ledsmond2[2]);
-		}
-		else {
-			setMoon(_mDay, atoi(ledsmond1[i]), atoi(ledsmond1[i]), _colmoon);
-			Serial.println(ledsmond1[i]);
-		}
-		Serial.println(i);
-		yield();
-		//delay(100);
-	}
-	Serial.println("set moon for end");
-}
 
-/* funktion setzen der Mondhelligkeit
-	k= Mondtagstufe(1-15), an=LED anfang, en= LED ende, c=Farbe rgb
-	color nach r/g/b
-	Get rid of '#' and convert it to integer
-*/
-byte setMoon(int k, int an, int en, String c) {
-	int number = (int)strtol(&c[1], NULL, 16);
-	// Split them up into r, g, b values
-	int red = number >> 16;
-	int green = number >> 8 & 0xFF;
-	int blue = number & 0xFF;
-	// end Split
-	int kred = (k / 256.0) * red;
-	int kgreen = (k / 256.0) * green;
-	int kblue = (k / 256.0) * blue;
-	// set LED
-	for (int ipix = an; ipix < en; ipix = ipix + 1) {
-		setPixel(ipix, kred, kgreen, kblue);
-	}
-	FastLED.show();
-}
 
 /* funktion schalten  */
 bool Schalten(char* timeE, char* timeA) {
