@@ -10,6 +10,8 @@ bool SZM = false, HKEM = false, HKAM = false;
 //
 char _buffe[VARSIZE6];
 char _buffa[VARSIZE6];
+int _hk;
+int _hkm;
 
 // rücksetzen nach speicherung zeiten
 void LEDSwitchSave() {
@@ -27,7 +29,14 @@ void LEDSwitchSave() {
 // led schalten
 void LEDSwitchK1() {
 	//Kanal 1
-	switch (atoi(GlobalConfig.hk1)) {
+	_hkm = atoi(GlobalConfig.hkm);
+	if (_hkm < 2) {
+		_hk = 0;
+	}
+	else {
+		_hk = atoi(GlobalConfig.hk1);
+	}
+	switch (_hk) {
 	case 0: // Hand Aus //do something when var equals 1
 		if (!HKA1) {
 			LEDsetColosAusK1();
@@ -89,7 +98,14 @@ void LEDSwitchK1() {
 }
 void LEDSwitchK2() {
 	//Kanal 2
-	switch (atoi(GlobalConfig.hk2)) {
+	_hkm = atoi(GlobalConfig.hkm);
+	if (_hkm < 2) {
+		_hk = 0;
+	}
+	else {
+		_hk = atoi(GlobalConfig.hk2);
+	}
+	switch (_hk) {
 	case 0: // Hand Aus //do something when var equals 1
 		if (!HKA2) {
 			LEDsetColosAusK2();
@@ -148,7 +164,14 @@ void LEDSwitchK2() {
 }
 void LEDSwitchK3() {
 	//Kanal3
-	switch (atoi(GlobalConfig.hk3)) {
+	_hkm = atoi(GlobalConfig.hkm);
+	if (_hkm < 2) {
+		_hk = 0;
+	}
+	else {
+		_hk = atoi(GlobalConfig.hk3);
+	}
+	switch (_hk) {
 		Serial.println(atoi(GlobalConfig.hk3));
 	case 0: // Hand Aus //do something when var equals 1
 		if (!HKA3) {
@@ -206,9 +229,15 @@ void LEDSwitchK3() {
 	delay(50);
 }
 void LEDSwitchK4() {
-//Kanal4
-	switch (atoi(GlobalConfig.hk4)) {
-	Serial.println(atoi(GlobalConfig.hk4));
+	//Kanal4
+	_hkm = atoi(GlobalConfig.hkm);
+	if (_hkm < 2) {
+		_hk = 0;
+	}
+	else {
+		_hk = atoi(GlobalConfig.hk4);
+	}
+	switch (_hk) {
 	case 0: // Hand Aus //do something when var equals 1
 		if (!HKA4) {
 			LEDsetColosAusK4();

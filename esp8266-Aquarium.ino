@@ -121,9 +121,11 @@ struct globalconfig_t {
 	char hk3[VARSIZE4] = "2";							// Hand Kanal 3 (0=Aus/1=Ein/2=Uhr)
 	char hk4[VARSIZE4] = "2";							// Hand Kanal 4 (0=Aus/1=Ein/2=Uhr)
 	char hkm[VARSIZE4] = "2";							// Hand Kanal M (0=Auto/1=Ein/2=Uhr)
+//	char ledanzges[VARSIZE4] = "221";					// Anzahl LED in Strip
 	char ledanzges[VARSIZE4] = "76";					// Anzahl LED in Strip
 	char ledanzcol[VARSIZE4] = "4";						// Anzahl der Collorkanäle
-	char ledanzmond[VARSIZE255] = "54-56";// Anzahl der mond led
+//	char ledanzmond[VARSIZE255] = "37-48;67-78;107-118";// Anzahl der mond led
+	char ledanzmond[VARSIZE255] = "54-56";              // Anzahl der mond led
 	char latitude[VARSIZE10] = "50.92878";				// Jena cordinates
 	char longtitude[VARSIZE10] = "11.5899";
 	//char DevicAPName[VARSIZE32] = "AP_TEST";			// Name des Access Point
@@ -181,10 +183,10 @@ unsigned long TimerStartMillis = 0;
 unsigned long KeyPressDownMillis = 0;
 unsigned long TimerSeconds = 0;
 unsigned long LastWiFiReconnectMillis = 0;
-unsigned long previousMillis = 0; // speichert wie viele Sekunden seit derletzten Änderung vergangen sind
-unsigned long interval = 1000;    // Interval zwischen zwei Änderungen
-unsigned long previousMillis_1 = 0; // speichert wie viele Sekunden seit derletzten Änderung vergangen sind
-unsigned long interval_1 = 1000;    // Interval zwischen zwei Änderungen
+unsigned long previousMillis = 0;         // speichert wie viele Sekunden seit derletzten Änderung vergangen sind
+unsigned long interval = 1000;            // Interval zwischen zwei Änderungen
+unsigned long previousMillis_1 = 0;       // speichert wie viele Sekunden seit derletzten Änderung vergangen sind
+unsigned long interval_1 = 1000;          // Interval zwischen zwei Änderungen
 bool OTAStart = false;
 bool UDPReady = false;
 bool startWifiManager = false;
