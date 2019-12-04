@@ -16,6 +16,7 @@
 #define VARSIZE32	    		32
 #define VARSIZE255	    		255
 
+#define FASTLED_ALLOW_INTERRUPTS 0
 
 #include <Arduino.h>
 #include <FS.h>
@@ -123,9 +124,9 @@ struct globalconfig_t {
 	char hkm[VARSIZE4] = "2";							// Hand Kanal M (0=Auto/1=Ein/2=Uhr)
 //	char ledanzges[VARSIZE4] = "221";					// Anzahl LED in Strip
 	char ledanzges[VARSIZE4] = "76";					// Anzahl LED in Strip
-	char ledanzcol[VARSIZE4] = "4";						// Anzahl der Collorkanäle
 //	char ledanzmond[VARSIZE255] = "37-48;67-78;107-118";// Anzahl der mond led
 	char ledanzmond[VARSIZE255] = "54-56";              // Anzahl der mond led
+	char ledanzcol[VARSIZE4] = "4";						// Anzahl der Collorkanäle
 	char latitude[VARSIZE10] = "50.92878";				// Jena cordinates
 	char longtitude[VARSIZE10] = "11.5899";
 	//char DevicAPName[VARSIZE32] = "AP_TEST";			// Name des Access Point
