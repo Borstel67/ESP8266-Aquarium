@@ -16,6 +16,7 @@
 #define VARSIZE32	    		32
 #define VARSIZE255	    		255
 
+
 #define FASTLED_ALLOW_INTERRUPTS 0
 
 #include <Arduino.h>
