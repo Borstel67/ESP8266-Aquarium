@@ -157,8 +157,9 @@ byte setAll(int k, int al, int ac, int ic, String c) {
 	for (int ipix = ic - 1; ipix < ipix_end; ipix = ipix + ac) {
 		//Serial.println(ipix);
 		leds[ipix].setRGB(kred, kgreen, kblue);
+		FastLED.show();
 	}
-	FastLED.show();
+	//FastLED.show();
 	//delay(30);
 	FastLED.delay(1000 / FRAMES_PER_SECOND);
 }
