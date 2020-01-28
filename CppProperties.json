@@ -19,7 +19,6 @@
         "C:\\arduino_libraries_ext\\libraries\\FastLED",
         "C:\\arduino_libraries_ext\\libraries\\OneWire",
         "C:\\arduino_libraries_ext\\libraries\\DallasTemperature",
-        "C:\\arduino-PR-beta1.9\\portable\\packages\\esp8266\\hardware\\esp8266\\2.4.1\\libraries\\DNSServer\\src",
         "C:\\arduino-PR-beta1.9\\portable\\packages\\esp8266\\hardware\\esp8266\\2.4.1\\cores\\esp8266",
         "C:\\arduino-PR-beta1.9\\portable\\packages\\esp8266\\hardware\\esp8266\\2.4.1\\cores\\esp8266\\libb64",
         "C:\\arduino-PR-beta1.9\\portable\\packages\\esp8266\\hardware\\esp8266\\2.4.1\\cores\\esp8266\\spiffs",

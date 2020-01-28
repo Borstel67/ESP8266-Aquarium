@@ -123,10 +123,10 @@ struct globalconfig_t {
 	char hk3[VARSIZE4] = "2";							// Hand Kanal 3 (0=Aus/1=Ein/2=Uhr)
 	char hk4[VARSIZE4] = "2";							// Hand Kanal 4 (0=Aus/1=Ein/2=Uhr)
 	char hkm[VARSIZE4] = "2";							// Hand Kanal M (0=Auto/1=Ein/2=Uhr)
-//	char ledanzges[VARSIZE4] = "221";					// Anzahl LED in Strip
-	char ledanzges[VARSIZE4] = "76";					// Anzahl LED in Strip
-//	char ledanzmond[VARSIZE255] = "37-48;67-78;107-118";// Anzahl der mond led
-	char ledanzmond[VARSIZE255] = "54-56";              // Anzahl der mond led
+	char ledanzges[VARSIZE4] = "221";					// Anzahl LED in Strip
+//	char ledanzges[VARSIZE4] = "76";					// Anzahl LED in Strip
+	char ledanzmond[VARSIZE255] = "37-48;67-78;107-118";// Anzahl der mond led
+//	char ledanzmond[VARSIZE255] = "54-56";              // Anzahl der mond led
 	char ledanzcol[VARSIZE4] = "4";						// Anzahl der Collorkanäle
 	char latitude[VARSIZE10] = "50.92878";				// Jena cordinates
 	char longtitude[VARSIZE10] = "11.5899";
@@ -197,14 +197,14 @@ bool PRESS_LONGsent = false;
 #define wifiManagerDebugOutput   true
 
 //FastLED
-#define LED_STRIP_PIN			0		// pin WS2812
-//#define LED_STRIP_PIN			3		// pin WS2812 NodeMCU 1.0 (ESP-12)
+//#define LED_STRIP_PIN			0		// pin WS2812 WeMos D1
+#define LED_STRIP_PIN			3		// pin WS2812 NodeMCU 1.0 (ESP-12)
 #define NUM_LEDS                300
 #define LED_TYPE                WS2812
 #define COLOR_ORDER             GRB
 #define FRAMES_PER_SECOND       60
 CRGB leds[NUM_LEDS];                    //Anzahl von LED des Strip
-//#define NUM_LEDS 221//192+139+86
+//#define NUM_LEDS 221 //192+139+86
 
 
 // Time NTP

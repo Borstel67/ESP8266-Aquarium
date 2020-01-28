@@ -122,6 +122,7 @@ void LEDsetMoon(int _mDay) {
 	Serial.println(ledsmond1[0]);
 	int y = atoi(ledsmond1[0]);
 	Serial.println(y);
+	setAll(0, _anzled, 1, 0, "000000");
 	for (i = 1; i < y + 1; i++) {
 		if (strchr(ledsmond1[i], '-')) { // sucht nach (-)
 			Serial.println(ledsmond1[i]);
@@ -158,6 +159,7 @@ byte setAll(int k, int al, int ac, int ic, String c) {
 		//Serial.println(ipix);
 		leds[ipix].setRGB(kred, kgreen, kblue);
 		FastLED.show();
+		delay(10);
 	}
 	//FastLED.show();
 	//delay(30);
