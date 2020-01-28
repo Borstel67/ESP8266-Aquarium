@@ -35,6 +35,8 @@
     <None Include="D1mini_Strip_Temp.fzz" />
     <None Include="CppProperties.json" />
     <None Include="FileHandling.ino" />
+    <None Include="MQTT.ino" />
+    <None Include="Schalten.ino" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="__vm\.esp8266-Aquarium.vsarduino.h">

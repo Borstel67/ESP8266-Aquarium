@@ -14,6 +14,7 @@
 #define VARSIZE10				10
 #define VARSIZE16				16
 #define VARSIZE32	    		32
+#define VARSIZE64	    		64
 #define VARSIZE255	    		255
 
 
@@ -28,6 +29,8 @@
 #include <ESP8266WebServer.h>
 #include <ESP8266HTTPUpdateServer.h>
 #include <ESP8266mDNS.h>
+#include <uMQTTBroker.h>
+#include <PubSubClient.h>
 #include <sunMoon.h>
 #include <Time.h>						// für NTP
 #include <Timezone.h>					// sommer winterzeit
@@ -343,6 +346,11 @@ void setup() {
 	NTP_Set();
 	// end NTP
 
+	// config MQTT 
+	char _buff[] = "";
+	loadMqtt_set();
+	// end config MQTT 
+
 	// config HomeMatic CCU CuxD 
 	CUxD_Set();
 	// end config HomeMatic CCU CuxD 
@@ -414,7 +422,8 @@ void loop() {
 
 		// telnet
 		Telnet();
-
+		// MQTT
+		mqtt_loop();
 		// FTP Server
 		//ftpSrv.handleFTP();        //make sure in loop you call handleFTP()!!
 
